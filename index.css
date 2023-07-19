@@ -1,119 +1,146 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
-*{
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
 }
-section{
-    width: 100%;
-    height: 100vh;
-    background-color: #131313;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #131313;
+}
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
 }
 
-.card{
-    position: relative;
-    width: 330px;
-    height: 450px;
-    background-color: aliceblue;
-    border-radius: 20px;
-    transform-style: preserve-3d;
-   
-    
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  animation: spin 10s infinite linear;
 }
-.card:hover {
-    animation: spin 8s infinite linear;
-    
-  }
-
-  
 @keyframes spin {
-    0% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
+  0% {
+    transform: rotateY(360deg);
   }
-
-.halfMoonTop{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%); 
-    background-color: #131313;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px; 
-}
-.halfMoonBottom{
-    position: absolute;
-    bottom: -30px; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #131313;
-    width: 50px;
-    height: 55px;
-    border-radius: 100px;
-
-}
-.leftWrapper{
-    margin: 20px;
-    
-    
-}
-.dateAndLogo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.dateAndLogo div:nth-child(2) img{
-    width:80px;
+  100% {
+    transform: rotateY(0deg);
+  }
 }
 
-.leftWrapper h5{
-    font-weight: 200;
-    font-family:'Times New Roman', Times, serif;
-}
-.leftWrapper p{
-    font-weight: 400;
-    font-family: 'Orbitron', sans-serif;
-}
-.leftWrapper div{
-    margin-top: 30px;
-}
-.leftWrapper div img{
-    width: 60px;
-    border-radius: 100px;
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
 }
 
-.userWrapper{
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.userWrapper .user{
-    display: flex;
-    align-items: center;
-}
-.user img{
-    width: 35px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.user p{
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 300;
+.card-front {
+  background-color: white;
+  color: #333;
+  display: flex;
+  font-family: Arial, sans-serif;
 }
 
-.userWrapper .number{
-    font-size: 11px;
-    font-family:'Orbitron', sans-serif ;
+.card-back {
+  background-color: white;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  transform: rotateY(180deg);
 }
-
+.halfMoonTop {
+  position: absolute;
+  left: 50%;
+  top: -25px;
+  transform: translate(-50%);
+  background-color: #131313;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.halfMoonBottom {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #131313;
+  width: 50px;
+  height: 55px;
+  border-radius: 100px;
+}
+.frontTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 30px 20px;
+  width: 100%;
+}
+.frontTop {
+  display: block;
+  align-items: center;
+}
+.firstPart {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 20px 0;
+}
+.secondPart div {
+  margin-bottom: 20px;
+}
+.logo {
+  width: 70px;
+}
+.qrCode {
+  width: 50px;
+}
+h6 {
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 5px;
+}
+p {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+}
+.line {
+  opacity: 50%;
+  margin-bottom: 10px;
+}
+.frontBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user {
+  width: 30px;
+}
+.bottomLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.userName {
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+.number {
+  font-size: 11px;
+  font-family: "Orbitron", sans-serif;
+}
+.backLogo {
+  width: 200px;
+}
